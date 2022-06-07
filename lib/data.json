@@ -1,0 +1,32 @@
+{
+    "status": "ok",
+    "totalResults": 33,
+    "articles": [
+        {
+            "source": {
+                "id": "globo",
+                "name": "Globo"
+            },
+            "author": null,
+            "title": "2ª Turma no STF derruba decisão de Nunes Marques e restaura cassação de deputado bolsonarista - Globo",
+            "description": "Fernando Francischini teve o mandato cassado pelo TSE por divulgar fake news sobre eleições. Na semana passada, Nunes Marques havia 'devolvido' o cargo ao parlamentar.",
+            "url": "https://g1.globo.com/politica/noticia/2022/06/07/2a-turma-do-stf-derruba-decisao-de-nunes-marques-que-devolveu-mandato-a-deputado-bolsonarista.ghtml",
+            "urlToImage": "https://s2.glbimg.com/gmuDAZ3K_V6-lPhQMY3vvcHVL5k=/1200x/smart/filters:cover():strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2022/V/5/WeCD9uQeCEKgNyW4PcLg/francischini.jpg",
+            "publishedAt": "2022-06-07T20:12:00Z",
+            "content": "A Segunda Turma do Supremo Tribunal Federal (STF) decidiu nesta terça-feira (7) por, por três votos a dois, derrubar a decisão do ministro Nunes Marques que tinha devolvido o mandato ao deputado bols… [+6703 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Uol.com.br"
+            },
+            "author": "Weslley Neto",
+            "title": "Pai de Anitta passou por cirurgia para tratar câncer no pulmão - UOL",
+            "description": "Mauro Machado, pai da cantora Anitta, afirmou estar em tratamento contra um câncer no pulmão. Ele compartilhou um relato em que disse não estar se sentindo bem nos últimos meses.\"Um pequeno resumo de dias tensos. Dias de pressão 15 por 20\", escreveu nos S",
+            "url": "https://www.uol.com.br/splash/noticias/2022/06/07/pai-anitta-cancer.htm",
+            "urlToImage": "https://conteudo.imguol.com.br/c/splash/f6/2022/06/06/anitta-postou-uma-foto-do-pai-mauro-machado-hospitalizado-1654532717375_v2_615x300.png",
+            "publishedAt": "2022-06-07T19:57:04Z",
+            "content": "Mauro Machado, pai da cantora Anitta, afirmou estar em tratamento contra um câncer no pulmão. Ele compartilhou um relato em que disse não estar se sentindo bem nos últimos meses.\r\n\"Um pequeno resumo … [+2157 chars]"
+        }
+    ]
+}

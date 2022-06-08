@@ -9,7 +9,7 @@ class ArtigoRepository {
   Future<List<ArtigosModel>> fetchArtigo() async {
     final response = await dio.get(url);
 
-    final list = response.data as List;
+    final list = response.data['articles'] as List;
 
     List<ArtigosModel> artigos = [];
 

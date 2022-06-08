@@ -52,9 +52,20 @@ class _NewsPageState extends State<NewsPage> {
       itemCount: controller.todos.length,
       itemBuilder: (context, index) {
         var art = controller.todos[index];
-        return ListTile(
-          title: Text(art.title.toString()),
-          subtitle: Text(art.description.toString()),
+        return Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Card(
+            child: ListTile(
+              title: Text(
+                art.title.toString(),
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                ),
+              ),
+              subtitle: Text(art.publishedAt.toString()),
+            ),
+          ),
         );
       },
     );

@@ -6,6 +6,7 @@ class ListTileWidget extends StatelessWidget {
   final Function functionFavoritos;
   final Function functionLerNaIntegra;
 
+  // ignore: prefer_const_constructors_in_immutables, use_key_in_widget_constructors
   ListTileWidget({
     required this.autor,
     required this.titulo,
@@ -23,8 +24,9 @@ class ListTileWidget extends StatelessWidget {
                 titulo, //TITULO
                 style: const TextStyle(
                   fontFamily: "Joan",
+                  fontWeight: FontWeight.bold,
                   color: Colors.black,
-                  fontSize: 18,
+                  fontSize: 14,
                 ),
               ),
               subtitle: Text(
@@ -32,6 +34,7 @@ class ListTileWidget extends StatelessWidget {
                 style: const TextStyle(
                   fontFamily: "OpenSans",
                   color: Colors.black,
+                  fontSize: 12,
                 ),
               ),
               trailing: Row(

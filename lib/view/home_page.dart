@@ -39,7 +39,7 @@ class _HomePageState extends State<HomePage> {
               itemBuilder: (context, index) {
                 var art = controller.artigos[index];
                 return ListTileWidget(
-                  autor: art.author.toString(),
+                  autor: validaAutor(art.author.toString()),
                   titulo: art.title.toString(),
                   functionFavoritos: () {},
                   functionLerNaIntegra: () => launchUrlString(
@@ -52,6 +52,16 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
     );
+  }
+
+  String validaAutor(String autor) {
+    if (autor.isEmpty) {
+      return "Desconhecido";
+    } else if (autor.contains("null")) {
+      return "Desconhecido";
+    } else {
+      return autor;
+    }
   }
 
   _error() {
@@ -106,7 +116,7 @@ class _HomePageState extends State<HomePage> {
           // Favoritos
           IconButton(
             onPressed: () => Navigator.push(context,
-                MaterialPageRoute(builder: (context) => const FavoritosPage())),
+                MaterialPageRoute(builder: (context) => FavoritosPage())),
             icon: const Icon(Icons.favorite, color: Colors.black),
           )
         ],

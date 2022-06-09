@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:projeto_jornal/widget/list_tile_widget.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
+// ignore: use_key_in_widget_constructors
 class FavoritosPage extends StatelessWidget {
-  const FavoritosPage({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,7 +17,7 @@ class FavoritosPage extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.all(10.0),
-        child: Expanded(
+        child: SizedBox(
           child: ListView.builder(
             itemCount: 10,
             itemBuilder: (context, index) {

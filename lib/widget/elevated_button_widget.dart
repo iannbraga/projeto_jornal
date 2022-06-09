@@ -4,6 +4,7 @@ class ElevatedButtonWidget extends StatelessWidget {
   final String titulo;
   final Function funcaoDoBotao;
 
+  // ignore: prefer_const_constructors_in_immutables, use_key_in_widget_constructors
   ElevatedButtonWidget({required this.titulo, required this.funcaoDoBotao});
 
   @override

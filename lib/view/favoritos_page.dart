@@ -19,13 +19,13 @@ class FavoritosPage extends StatelessWidget {
         padding: const EdgeInsets.all(10.0),
         child: SizedBox(
           child: ListView.builder(
-            itemCount: 10,
+            itemCount: 0,
             itemBuilder: (context, index) {
               return ListTileWidget(
                 autor: "autor",
                 titulo: "titulo",
                 functionFavoritos: () {},
-                functionLerNaIntegra: () => launchUrlString(
+                functionLerNoticia: () => launchUrlString(
                   "https://www.google.com.br",
                 ),
               );

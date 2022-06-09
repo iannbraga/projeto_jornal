@@ -2,8 +2,9 @@ class ArtigosModel {
   String? author;
   String? title;
   String? description;
-  String? url;
   String? content;
+  String? url;
+  List<String> favoritos = [];
 
   ArtigosModel({
     this.author,

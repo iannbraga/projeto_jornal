@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:projeto_jornal/controller/home_page_controller.dart';
 import 'package:projeto_jornal/view/favoritos_page.dart';
+import 'package:projeto_jornal/view/read_page.dart';
 import 'package:projeto_jornal/widget/elevated_button_widget.dart';
 import 'package:projeto_jornal/widget/list_tile_widget.dart';
-import 'package:url_launcher/url_launcher_string.dart';
 
 // ignore: use_key_in_widget_constructors
 class HomePage extends StatefulWidget {
@@ -22,7 +22,7 @@ class _HomePageState extends State<HomePage> {
 
   _success() {
     return Padding(
-      padding: const EdgeInsets.all(10.0),
+      padding: EdgeInsets.all(10.0),
       child: Column(
         children: [
           Row(
@@ -41,10 +41,17 @@ class _HomePageState extends State<HomePage> {
                 return ListTileWidget(
                   autor: validaAutor(art.author.toString()),
                   titulo: art.title.toString(),
-                  functionFavoritos: () {},
-                  functionLerNaIntegra: () => launchUrlString(
-                    art.url.toString(),
+                  functionLerNoticia: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => ReadPage(
+                              autor: validaAutor(art.author.toString()),
+                              titulo: art.title.toString(),
+                              descricao: art.description.toString(),
+                              url: art.url.toString(),
+                            )),
                   ),
+                  functionFavoritos: () {},
                 );
               },
             ),
@@ -111,13 +118,13 @@ class _HomePageState extends State<HomePage> {
           // Pesquisar
           IconButton(
             onPressed: () {},
-            icon: const Icon(Icons.search, color: Colors.black),
+            icon: Icon(Icons.search, color: Colors.black),
           ),
           // Favoritos
           IconButton(
             onPressed: () => Navigator.push(context,
                 MaterialPageRoute(builder: (context) => FavoritosPage())),
-            icon: const Icon(Icons.favorite, color: Colors.black),
+            icon: Icon(Icons.favorite, color: Colors.black),
           )
         ],
       ),

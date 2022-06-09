@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:projeto_jornal/widget/text_autor_widget.dart';
+import 'package:projeto_jornal/widget/text_titulo_widget.dart';
 
 class ListTileWidget extends StatelessWidget {
   final String titulo;
   final String autor;
   final Function functionFavoritos;
-  final Function functionLerNaIntegra;
+  final Function functionLerNoticia;
 
   // ignore: prefer_const_constructors_in_immutables, use_key_in_widget_constructors
   ListTileWidget({
     required this.autor,
     required this.titulo,
     required this.functionFavoritos,
-    required this.functionLerNaIntegra,
+    required this.functionLerNoticia,
   });
 
   @override
@@ -20,23 +22,8 @@ class ListTileWidget extends StatelessWidget {
       child: Column(
         children: <Widget>[
           ListTile(
-              title: Text(
-                titulo, //TITULO
-                style: const TextStyle(
-                  fontFamily: "Joan",
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black,
-                  fontSize: 14,
-                ),
-              ),
-              subtitle: Text(
-                autor, //AUTOR
-                style: const TextStyle(
-                  fontFamily: "OpenSans",
-                  color: Colors.black,
-                  fontSize: 12,
-                ),
-              ),
+              title: TextTituloWidget(conteudo: titulo),
+              subtitle: TextAutorWidget(autor: autor),
               trailing: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
@@ -45,7 +32,7 @@ class ListTileWidget extends StatelessWidget {
                     icon: const Icon(Icons.favorite),
                   ),
                   IconButton(
-                    onPressed: () => functionLerNaIntegra(),
+                    onPressed: () => functionLerNoticia(),
                     icon: const Icon(Icons.arrow_forward),
                   ),
                 ],

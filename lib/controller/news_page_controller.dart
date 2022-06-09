@@ -5,21 +5,21 @@ import 'package:projeto_jornal/repository/artigo_repository.dart';
 class NewsPageController {
   List<ArtigosModel> todos = [];
   final ArtigoRepository _repository;
-  final state = ValueNotifier<HomeState>(HomeState.start);
+  final state = ValueNotifier<NewsState>(NewsState.start);
 
   NewsPageController([ArtigoRepository? repository])
       : _repository = repository ?? ArtigoRepository();
 
   Future start() async {
-    state.value = HomeState.loading;
+    state.value = NewsState.loading;
     try {
       //todos = await _repository.fetchArtigosPrincipais();
       todos = await _repository.fetchArtigoBusca('corno');
-      state.value = HomeState.success;
+      state.value = NewsState.success;
     } catch (e) {
-      state.value = HomeState.error;
+      state.value = NewsState.error;
     }
   }
 }
 
-enum HomeState { start, loading, success, error }
+enum NewsState { start, loading, success, error }

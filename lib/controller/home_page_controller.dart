@@ -1,5 +1,4 @@
 import 'package:flutter/widgets.dart';
-import 'package:projeto_jornal/controller/news_page_controller.dart';
 import 'package:projeto_jornal/model/articles_model.dart';
 import 'package:projeto_jornal/repository/artigo_repository.dart';
 

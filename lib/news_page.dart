@@ -1,5 +1,7 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:projeto_jornal/controller/news_page_controller.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 // ignore: use_key_in_widget_constructors
 class NewsPage extends StatefulWidget {
@@ -53,17 +55,32 @@ class _NewsPageState extends State<NewsPage> {
       itemBuilder: (context, index) {
         var art = controller.todos[index];
         return Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(5.0),
           child: Card(
-            child: ListTile(
-              title: Text(
-                art.title.toString(),
-                style: const TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20,
+            child: Column(
+              children: <Widget>[
+                ListTile(
+                  title: Text(
+                    art.author.toString(),
+                  ),
+                  subtitle: Text(
+                    art.title.toString(),
+                    style: const TextStyle(
+                      fontFamily: "Joan",
+                      fontSize: 20,
+                    ),
+                  ),
                 ),
-              ),
-              subtitle: Text(art.publishedAt.toString()),
+                RichText(
+                  text: TextSpan(
+                    text: "Ler na intergra..",
+                    recognizer: new TapGestureRecognizer()
+                      ..onTap = () {
+                        launchUrlString(art.url.toString());
+                      },
+                  ),
+                )
+              ],
             ),
           ),
         );

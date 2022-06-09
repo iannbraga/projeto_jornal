@@ -13,7 +13,8 @@ class NewsPageController {
   Future start() async {
     state.value = HomeState.loading;
     try {
-      todos = await _repository.fetchArtigo();
+      //todos = await _repository.fetchArtigosPrincipais();
+      todos = await _repository.fetchArtigoBusca('corno');
       state.value = HomeState.success;
     } catch (e) {
       state.value = HomeState.error;

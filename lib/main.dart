@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:projeto_jornal/view/news_page.dart';
+import 'package:projeto_jornal/news_page.dart';
+import 'package:projeto_jornal/view/home_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -10,7 +11,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "Home",
-      home: NewsPage(),
+      //home: NewsPage(),
+      home: HomePage(),
     );
   }
 }

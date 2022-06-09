@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:projeto_jornal/news_page.dart';
 import 'package:projeto_jornal/widget/elevated_button_widget.dart';
 import 'package:projeto_jornal/widget/list_tile_widget.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 // ignore: use_key_in_widget_constructors
 class HomePage extends StatelessWidget {
@@ -43,8 +45,10 @@ class HomePage extends StatelessWidget {
                   return ListTileWidget(
                     autor: "autor",
                     titulo: "titulo",
-                    functionFavoritos: () {},
-                    functionLerNaIntegra: () {},
+                    functionFavoritos: () => Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => NewsPage())),
+                    functionLerNaIntegra: () =>
+                        launchUrlString("https://www.google.com/br"),
                   );
                 },
               ),

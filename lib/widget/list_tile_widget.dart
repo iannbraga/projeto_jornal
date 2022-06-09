@@ -38,11 +38,11 @@ class ListTileWidget extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
                   IconButton(
-                    onPressed: functionFavoritos(),
+                    onPressed: () => functionFavoritos,
                     icon: const Icon(Icons.favorite),
                   ),
                   IconButton(
-                    onPressed: functionLerNaIntegra(),
+                    onPressed: () => functionLerNaIntegra(),
                     icon: const Icon(Icons.arrow_forward),
                   ),
                 ],

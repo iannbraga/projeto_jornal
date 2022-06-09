@@ -74,7 +74,7 @@ class _NewsPageState extends State<NewsPage> {
                 RichText(
                   text: TextSpan(
                     text: "Ler na intergra..",
-                    recognizer: new TapGestureRecognizer()
+                    recognizer: TapGestureRecognizer()
                       ..onTap = () {
                         launchUrlString(art.url.toString());
                       },

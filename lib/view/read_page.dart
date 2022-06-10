@@ -27,9 +27,10 @@ class ReadPage extends StatelessWidget {
         title: const Text(""),
         actions: <Widget>[
           IconButton(
-            onPressed: () {},
+            onPressed: () =>
+                launchUrlString("whatsapp://send?phone?&text=$url"),
             icon: const Icon(
-              Icons.favorite,
+              Icons.share,
               color: Colors.black,
             ),
           ),
@@ -75,5 +76,15 @@ class ReadPage extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  abrirWhatsApp(String mensagem) async {
+    var whatsappUrl = "whatsapp://send?phone?text=";
+
+    if (await canLaunchUrlString(whatsappUrl)) {
+      await launchUrlString(whatsappUrl);
+    } else {
+      throw 'Could not launch $whatsappUrl';
+    }
   }
 }

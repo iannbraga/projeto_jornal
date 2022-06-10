@@ -19,6 +19,16 @@ class HomePageController {
       state.value = HomeState.error;
     }
   }
+
+  Future search(String word) async {
+    state.value = HomeState.loading;
+    try {
+      artigos = await _repository.fetchArtigoBusca(word);
+      state.value = HomeState.success;
+    } catch (e) {
+      state.value = HomeState.error;
+    }
+  }
 }
 
 enum HomeState { start, loading, success, error }

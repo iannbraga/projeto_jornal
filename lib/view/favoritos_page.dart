@@ -24,7 +24,6 @@ class FavoritosPage extends StatelessWidget {
               return ListTileWidget(
                 autor: "autor",
                 titulo: "titulo",
-                functionFavoritos: () {},
                 functionLerNoticia: () => launchUrlString(
                   "https://www.google.com.br",
                 ),

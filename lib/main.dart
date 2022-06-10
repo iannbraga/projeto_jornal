@@ -12,7 +12,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Home",
-      //home: NewsPage(),
       home: HomePage(),
     );
   }

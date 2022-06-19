@@ -2,13 +2,20 @@ import 'package:dio/dio.dart';
 import 'package:projeto_jornal/model/articles_model.dart';
 
 class ArtigoRepository {
-  final baseUrl = "https://newsapi.org/v2/everything";
+  final String apiKey = '057a7c050cf247eba186d583de18c506';
+  final String apiKey2 = '2d6b45469a2a45b6b7acf734bcde27f4';
+
+  final urlSearchNews = "https://newsapi.org/v2/everything";
+  final urlTopHeadlines = "https://newsapi.org/v2/top-headlines";
+
   final dio = Dio();
-  final url =
-      "https://newsapi.org/v2/top-headlines?country=br&apiKey=2d6b45469a2a45b6b7acf734bcde27f4";
 
   Future<List<ArtigosModel>> fetchArtigosPrincipais() async {
-    final response = await dio.get(url);
+    //final response = await dio.get(urlTopHeadlines);
+    final response = await dio.get(urlTopHeadlines, queryParameters: {
+      'country': 'br',
+      'apiKey': apiKey,
+    });
     final list = response.data['articles'] as List;
 
     List<ArtigosModel> artigos = [];
@@ -21,9 +28,9 @@ class ArtigoRepository {
   }
 
   Future<List<ArtigosModel>> fetchArtigoBusca(String termo) async {
-    final response = await dio.get(baseUrl, queryParameters: {
+    final response = await dio.get(urlSearchNews, queryParameters: {
       'q': termo,
-      'apiKey': '2d6b45469a2a45b6b7acf734bcde27f4'
+      'apiKey': apiKey,
     });
     final list = response.data['articles'] as List;
 

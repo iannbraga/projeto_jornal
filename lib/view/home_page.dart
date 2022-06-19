@@ -11,6 +11,11 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final controller = HomePageController();
+  final TextEditingController filtro = TextEditingController();
+  List nomes = [];
+  List nomesFiltrados = [];
+  Icon iconePesquisa = Icon(Icons.search);
+  Widget tituloAppBar = Text("Pesquisar");
 
   @override
   void initState() {

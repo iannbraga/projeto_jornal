@@ -30,6 +30,7 @@ class ArtigoRepository {
   Future<List<ArtigosModel>> fetchArtigoBusca(String termo) async {
     final response = await dio.get(urlSearchNews, queryParameters: {
       'q': termo,
+      'language': 'pt',
       'apiKey': apiKey,
     });
     final list = response.data['articles'] as List;

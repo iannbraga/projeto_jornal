@@ -12,6 +12,7 @@ class HomePageController {
     try {
       artigos = await _repository.fetchArtigosPrincipais();
     } catch (e) {
+      // ignore: avoid_print
       print(e.hashCode);
     }
   }
@@ -20,6 +21,7 @@ class HomePageController {
     try {
       artigos = await _repository.fetchArtigoBusca(word);
     } catch (e) {
+      // ignore: avoid_print
       print(e.hashCode);
     }
   }

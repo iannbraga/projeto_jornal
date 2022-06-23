@@ -21,8 +21,6 @@ class HomePageController {
     try {
       if (word.length > 3) {
         artigos = await _repository.fetchArtigoBusca(word);
-      } else {
-        artigos = [];
       }
     } catch (e) {
       // ignore: avoid_print

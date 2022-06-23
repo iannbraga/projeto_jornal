@@ -60,7 +60,7 @@ class _HomePageState extends State<HomePage> {
                             builder: (context) => ReadPage(
                               autor: '',
                               titulo: art.title.toString(),
-                              descricao: art.description.toString(),
+                              descricao: art.content.toString(),
                               url: art.url.toString(),
                             ),
                           ),

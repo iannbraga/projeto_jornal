@@ -19,7 +19,11 @@ class HomePageController {
 
   Future search(String word) async {
     try {
-      artigos = await _repository.fetchArtigoBusca(word);
+      if (word.length > 3) {
+        artigos = await _repository.fetchArtigoBusca(word);
+      } else {
+        artigos = [];
+      }
     } catch (e) {
       // ignore: avoid_print
       print(e.hashCode);

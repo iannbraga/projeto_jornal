@@ -44,12 +44,6 @@ class CustomSearchDelegated extends SearchDelegate {
 
   @override
   Widget buildResults(BuildContext context) {
-    List<String> matchQuery = [];
-    for (var termo in list) {
-      if (termo.toLowerCase().contains(query.toLowerCase())) {
-        matchQuery.add(termo);
-      }
-    }
     return FutureBuilder(
       future: controller.search(query),
       builder: (context, child) {

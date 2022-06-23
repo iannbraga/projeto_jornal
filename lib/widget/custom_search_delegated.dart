@@ -9,6 +9,13 @@ class CustomSearchDelegated extends SearchDelegate {
 
   List<String> noticias = [];
 
+  corrigeTexto(String texto) {
+    if (texto.contains('null')) {
+      texto = 'Desconhecido';
+      return texto;
+    }
+  }
+
   @override
   List<Widget>? buildActions(BuildContext context) {
     return [
@@ -43,8 +50,40 @@ class CustomSearchDelegated extends SearchDelegate {
         matchQuery.add(termo);
       }
     }
-    return const Center(
-      child: Text('Teste'),
+    return FutureBuilder(
+      future: controller.search(query),
+      builder: (context, child) {
+        return Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Column(
+            children: [
+              Expanded(
+                child: ListView.builder(
+                  itemCount: controller.artigos.length,
+                  itemBuilder: (context, index) {
+                    var art = controller.artigos[index];
+                    return ListTileWidget(
+                      autor: art.author.toString(),
+                      titulo: art.title.toString(),
+                      functionLerNoticia: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ReadPage(
+                            autor: art.author.toString(),
+                            titulo: art.title.toString(),
+                            descricao: art.description.toString(),
+                            url: art.url.toString(),
+                          ),
+                        ),
+                      ),
+                    );
+                  },
+                ),
+              )
+            ],
+          ),
+        );
+      },
     );
   }
 

@@ -13,6 +13,10 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final controller = HomePageController();
 
+  trataTexto(String texto) {
+    if (texto.contains('null')) return 'Desconhecido';
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,13 +52,13 @@ class _HomePageState extends State<HomePage> {
                     itemBuilder: (context, index) {
                       var art = controller.artigos[index];
                       return ListTileWidget(
-                        autor: art.author.toString(),
+                        autor: '',
                         titulo: art.title.toString(),
                         functionLerNoticia: () => Navigator.push(
                           context,
                           MaterialPageRoute(
                             builder: (context) => ReadPage(
-                              autor: art.author.toString(),
+                              autor: '',
                               titulo: art.title.toString(),
                               descricao: art.description.toString(),
                               url: art.url.toString(),

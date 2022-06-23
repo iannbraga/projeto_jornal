@@ -26,5 +26,3 @@ class HomePageController {
     }
   }
 }
-
-enum HomeState { start, loading, success, error }
